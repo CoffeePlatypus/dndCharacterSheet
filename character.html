@@ -1,0 +1,298 @@
+<html>
+     <head>
+          <title>Character</title>
+          <link rel="stylesheet" href="character.css">
+          <script src="character.js"></script>
+          <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     </head>
+     <body onload="init()">
+          <table>
+               <tr>
+                    <td><input type="text" id="character-name" class="form-control form-control-lg" value="Zira"></td>
+                    <td>
+                         <div class="table-box">
+                              <table>
+                                   <tr>
+                                        <td><input type="text" id="class" class="form-control form-control-sm form-control-plaintext" value="Ranger 7">
+                                        <td><input type="text" id="background" class="form-control form-control-sm form-control-plaintext" value="Acolyate"></td>
+                                        <td><input type="text" id="player" class="form-control form-control-sm form-control-plaintext" value="Julia"></td>
+                                   </tr>
+                                   <tr class="table-div">
+                                        <th>Class & Level</th>
+                                        <th>Background</th>
+                                        <th>Player Name</th>
+                                   </tr>
+                                   <tr >
+                                        <td><input type="text" id="race" class="form-control form-control-sm form-control-plaintext table-space" value="High Elf"></td>
+                                        <td><input type="text" id="alignment" class="form-control form-control-sm form-control-plaintext table-space" value="Chaotic Neutral"></td>
+                                        <td><input type="" id="exp" class="form-control form-control-sm form-control-plaintext table-space" value="100"></td>
+                                   </tr>
+                                   <tr class="table-div">
+                                        <th>Race</th>
+                                        <th>Aligment</th>
+                                        <th>Experience Points</th>
+                                   </tr>
+                              </table>
+                         </div>
+                    </td>
+                    <td>
+                         <div class="min-box">
+                              <input id="prof" type='number'class="form-control form-control-lg stat-val" value="3">
+                              <div class="text-center" data-toggle="tooltip" data-placement="top" title="Proficency Bonus"><i class="material-icons">star</i></div>
+                         </div>
+                    </td>
+                    <td>
+                         <div class="min-box">
+                              <input id="ac" type='number'class="form-control form-control-lg stat-val" value="16">
+                              <div class="text-center" data-toggle="tooltip" data-placement="top" title="Armor Class"><i class="material-icons">security</i></div>
+                         </div>
+                    </td>
+                    <td>
+                         <div class="min-box">
+                              <input id="speed" type='number'class="form-control form-control-lg stat-val" value="30">
+                              <div class="text-center" data-toggle="tooltip" data-placement="top" title="Speed"><i class="material-icons">directions_run</i></div>
+                         </div>
+                    </td>
+               </tr>
+          </table>
+          <table>
+               <tr>
+                    <td><div class="stat-box">
+                         <h1 class="text-center stat-label">HP</h1>
+                         <!-- <i class="material-icons text-center">favorite</i> -->
+                         <input id="hp-max" type='number'class="form-control form-control-sm stat-mod form-control-center" value="49" readonly>
+                         <input id="hp-cur" type='number'class="form-control form-control-lg stat-val" value="32">
+                    </div></td>
+                    <td><div class="stat-box">
+                         <h1 class="text-center stat-label">Temp HP</h1>
+                         <!-- <i class="material-icons">healing</i> -->
+                         <input id="tmp-hp" type='number'class="form-control form-control-lg stat-val" value="0">
+                    </div></td>
+                    <td><div class="stat-box">
+                         <h1 class="text-center stat-label">Hit Dice</h1>
+                         <h3 class="text-center hit-die">Total: <u>8 d 10</u></h3>
+                         <input  type='number'class="form-control form-control-lg stat-val" value="8">
+                    </div></td>
+                    <td><div class="stat-box">
+                         <h1 class="text-center stat-label">Death Saves</h1>
+                         <h3 class="text-center hit-die">  Sucess
+                              <i class="material-icons">check_box_outline_blank</i>
+                              <i class="material-icons">check_box_outline_blank</i>
+                              <i class="material-icons">check_box_outline_blank</i>
+                         </h3>
+                         <h3 class="text-center hit-die">Failures</u>
+                              <i class="material-icons">check_box_outline_blank</i>
+                              <i class="material-icons">check_box_outline_blank</i>
+                              <i class="material-icons">check_box_outline_blank</i>
+                         </h3>
+                    </div></td>
+                    <td colspan="2">
+                         <div class="stat-box">
+                              <h1 class="text-center stat-label">Attack</h1>
+                              <table id="attack-table">
+                                   <tr>
+                                        <th>Longbow</td>
+                                        <td>10</td>
+                                        <td>1d8 + 5</td>
+                                   </tr>
+                                   <tr>
+                                        <th>Shortsword</td>
+                                        <td>10</td>
+                                        <td>1d6 + 5</td>
+                                   </tr>
+                              </table>
+                         </div>
+                    </td>
+               </tr>
+               <tr>
+                    <td><div class="stat-box">
+                         <h1 class="text-center stat-label">Strength</h1>
+                         <h2 class="text-center stat-abbr">(str)</h2>
+                         <input id="str-val" type='number'class="form-control form-control-lg stat-val" value="10">
+                         <input id="str-mod" type='number'class="form-control form-control-sm stat-mod form-control-center" value="0" readonly>
+                         <!-- <i class="material-icons">exposure_zero</i> -->
+                    </div></td>
+                    <td><div class="stat-box">
+                         <h1 class="text-center stat-label">Dexterity</h1>
+                         <h2 class="text-center stat-abbr">(dex)</h2>
+                         <input id="dex-val" type='number'class="form-control form-control-lg stat-val" value="20">
+                         <input id="dex-mod" type='number'class="form-control form-control-sm stat-mod form-control-center" value="5" readonly>
+                    </div></td>
+                    <td><div class="stat-box">
+                         <h1 class="text-center stat-label">Constitution</h1>
+                         <h2 class="text-center stat-abbr">(con)</h2>
+                         <input id="con-val" type='number'class="form-control form-control-lg stat-val" value="11">
+                         <input id="con-mod" type='number'class="form-control form-control-sm stat-mod form-control-center" value="0" readonly>
+                    </div></td>
+                    <td><div class="stat-box">
+                         <h1 class="text-center stat-label">Intelligence</h1>
+                         <h2 class="text-center stat-abbr">(int)</h2>
+                         <input id="int-val" type='number'class="form-control form-control-lg stat-val" value="12">
+                         <input id="int-mod" type='number'class="form-control form-control-sm stat-mod form-control-center" value="1" readonly>
+                    </div></td>
+                    <td><div class="stat-box">
+                         <h1 class="text-center stat-label">Wisdom</h1>
+                         <h2 class="text-center stat-abbr">(wis)</h2>
+                         <input id="wis-val" type='number'class="form-control form-control-lg stat-val" value="13">
+                         <input id="wis-mod" type='number'class="form-control form-control-sm stat-mod form-control-center" value="1" readonly>
+                    </div></td>
+                    <td><div class="stat-box">
+                         <h1 class="text-center stat-label">Charisma</h1>
+                         <h2 class="text-center stat-abbr">(cha)</h2>
+                         <input id="cha-val" type='number'class="form-control form-control-lg stat-val" value="11">
+                         <input id="cha-mod" type='number'class="form-control form-control-sm stat-mod form-control-center" value="0" readonly>
+                    </div></td>
+
+               </tr>
+               <tr>
+                    <td class="td-stats">
+                         <div class="stats-list-box">
+                              <div class="form-inline">
+                                   <i class="material-icons">star_border</i>
+                                   <input type="number" id="str-save" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=3 readonly>
+                                   <label for="str-save">Str Saving</label>
+
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star_border</i>
+                                   <input type="number" id="atheletics" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=0 readonly>
+                                   <label for="str-save">Athletics</label>
+
+                              </div>
+                         </div>
+                    </td>
+                    <td class="td-stats">
+                         <div class="stats-list-box">
+                              <div class="form-inline">
+                                   <i class="material-icons">star</i>
+                                   <input type="number" id="dex-sav" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=8 readonly>
+                                   <label for="dex-save">Dex Saving</label>
+
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star</i>
+                                   <input type="number" id="acrobatics" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=5 readonly>
+                                   <label for="acrobaticse">Acrobatics</label>
+
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star_border</i>
+                                   <input type="number" id="sleight-of-hand" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=5 readonly>
+                                   <label for="sleight-of-hand">Selight of Hand</label>
+
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star_border</i>
+                                   <input type="number" id="stealth" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=5 readonly>
+                                   <label for="stealth">Stealth</label>
+                              </div>
+                         </div>
+                    </td>
+                    <td class="td-stats">
+                         <div class="stats-list-box">
+                              <div class="form-inline">
+                                   <i class="material-icons">star_border</i>
+                                   <input type="number" id="con-save" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=0 readonly>
+                                   <label for="con-save">Con Saving</label>
+                              </div>
+                         </div>
+                    </td>
+                    <td class="td-stats">
+                         <div class="stats-list-box">
+                              <div class="form-inline">
+                                   <i class="material-icons">star_border</i>
+                                   <input type="number" id="int-save" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=1 readonly>
+                                   <label for="int-save">Int Saving</label>
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star_border</i>
+                                    <input type="number" id="arcana" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=1 readonly>
+                                   <label for="arcana">Arcana</label>
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star_border</i>
+                                    <input type="number" id="history" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=1 readonly>
+                                   <label for="history">History</label>
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star_border</i>
+                                    <input type="number" id="investigation" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=1 readonly>
+                                   <label for="investigation">Investigation</label>
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star</i>
+                                    <input type="number" id="religion" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=4 readonly>
+                                   <label for="religion">Religion</label>
+                              </div>
+                         </div>
+                    </td>
+                    <td class="td-stats">
+                         <div class="stats-list-box">
+                              <div class="form-inline">
+                                   <i class="material-icons">star_border</i>
+                                   <input type="number" id="wis-save" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=1 readonly>
+                                   <label for="wis-save">Wis Saving</label>
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star</i>
+                                    <input type="number" id="animal" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=4 readonly>
+                                   <label for="animal">Animal</label>
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star</i>
+                                    <input type="number" id="insight" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=4 readonly>
+                                   <label for="insight">Insight</label>
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star_border</i>
+                                    <input type="number" id="medicine" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=1 readonly>
+                                   <label for="medicine">Medicine</label>
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star</i>
+                                    <input type="number" id="perception" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=4 readonly>
+                                   <label for="perception">Perception</label>
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star</i>
+                                    <input type="number" id="survival" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=4 readonly>
+                                   <label for="survival">Survival</label>
+                              </div>
+                         </div>
+                    </td>
+                    <td class="td-stats">
+                         <div class="stats-list-box">
+                              <div class="form-inline">
+                                   <i class="material-icons">star_border</i>
+                                    <input type="number" id="cha-save" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=0 readonly>
+                                   <label for="cha-save">Cha Saving</label>
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star_border</i>
+                                    <input type="number" id="deception" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=0 readonly>
+                                   <label for="deception">Deception</label>
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star_border</i>
+                                    <input type="number" id="intimidation" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=0 readonly>
+                                   <label for="history">Intimidation</label>
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star_border</i>
+                                    <input type="number" id="performance" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=0 readonly>
+                                   <label for="performance">Performance</label>
+                              </div>
+                              <div class="form-inline">
+                                   <i class="material-icons">star_border</i>
+                                    <input type="number" id="persuasion" class="form-control form-control-sm form-control-plaintext mx-sm-3 text-center stat" value=0 readonly>
+                                   <label for="persuasion">Persuasion</label>
+                              </div>
+                         </div>
+                    </td>
+
+               </tr>
+          </table>
+     </body>
+<html>

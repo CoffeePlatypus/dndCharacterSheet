@@ -1,0 +1,93 @@
+body{
+     padding: 2em;
+     background-image: url("c.png");
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+}
+
+#character-name{
+     margin-right: 5em;
+}
+
+.table-div{
+     border-top: 1px solid black;
+}
+
+.table-space{
+     margin-top: 2em;
+}
+
+.table-box{
+     border : 2px solid black;
+     min-width: 10vw;
+     border-radius: 1em;
+     padding: 1em;
+     margin: 1em 2em;
+     /* background-color: fff */
+     background:rgba(197, 255, 253, 0.8);
+}
+
+.min-box{
+     border : 2px solid black;
+     border-radius: 1em;
+     background:rgba(197, 255, 253, 0.8);
+     padding: .5em;
+     margin: .5em;
+}
+
+.stats-list-box{
+     border : 2px solid black;
+     border-radius: 1em;
+     background:rgba(197, 255, 253, 0.8);
+     padding: .5em;
+     margin: .5em;
+     min-width: 10vw;
+     font-size: 12px;
+
+}
+
+#attack-table{
+     margin-left: 5em;
+}
+
+td.td-stats{
+     vertical-align: top;
+}
+
+.stat{
+     max-width: 2em;
+}
+
+.stat-label{
+     font-size: 20px;
+}
+
+.stat-abbr{
+     font-size: 10px;
+     color: grey;
+}
+
+.hit-die{
+     font-size: 16px;
+}
+
+.stat-val{
+     max-width: 4em;
+     margin: .5em 1.5em;
+}
+
+.stat-mod{
+     max-width: 3.5em;
+     margin: 0 3.5em;
+     border-radius: 5em;
+}
+
+.stat-box{
+     border : 2px solid black;
+     min-width: 10vw;
+     border-radius: 1em;
+     padding: .5em;
+     margin: .5em;
+     background:rgba(197, 255, 253, 0.8);
+}
